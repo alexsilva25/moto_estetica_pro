@@ -1,56 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>World Detailing Motos</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Detailing Motos - Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white text-center p-10">
 
-<h1 class="text-4xl text-yellow-500 font-bold">World Detailing Motos</h1>
-<p class="mt-2">Estética premium para sua moto</p>
+<body class="bg-black text-white">
 
-<form id="form" class="max-w-md mx-auto mt-8 space-y-4">
-<input id="nome" placeholder="Nome" class="w-full p-3 bg-gray-800" required>
-<input id="telefone" placeholder="WhatsApp" class="w-full p-3 bg-gray-800" required>
-<select id="servico" class="w-full p-3 bg-gray-800">
-<option>Lavagem</option>
-<option>Polimento</option>
-<option>Vitrificação</option>
-</select>
-<input type="date" id="data" class="w-full p-3 bg-gray-800" required>
-<input type="time" id="hora" class="w-full p-3 bg-gray-800" required>
-<button class="bg-yellow-500 text-black w-full p-3 font-bold">Agendar</button>
-</form>
+<!-- HEADER COM LOGO -->
+<header class="flex items-center justify-between px-6 py-4 bg-black border-b border-yellow-500">
+  <div class="flex items-center gap-3">
+    <img src="https://i.imgur.com/yourlogo.png" alt="Logo" class="w-12">
+    <h1 class="text-xl font-bold text-yellow-500">World Detailing</h1>
+  </div>
+  <a href="#agendamento" class="bg-yellow-500 text-black px-4 py-2 rounded-lg font-bold">Agendar</a>
+</header>
 
-<p id="msg" class="mt-4"></p>
+<!-- HERO PREMIUM COM IMAGEM -->
+<section class="relative text-center py-32 px-6 bg-cover bg-center"
+  style="background-image: url('https://images.unsplash.com/photo-1609630875171-b1321377ee65');">
 
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10">
+    <h1 class="text-5xl md:text-6xl font-bold text-yellow-500">World Detailing Motos</h1>
+    <p class="mt-4 text-lg text-gray-300">Estética premium para motos exigentes</p>
+
+    <a href="#agendamento"
+      class="mt-8 inline-block bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold text-lg transition">
+      Agendar Agora
+    </a>
+  </div>
+</section>
+
+<!-- SERVIÇOS PREMIUM COM IMAGENS -->
+<section class="py-20 px-6">
+  <h2 class="text-4xl text-center font-bold mb-12">Serviços Premium</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="bg-gray-900 rounded-2xl overflow-hidden border border-yellow-500 hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-yellow-500">Lavagem Técnica</h3>
+        <p class="mt-3 text-gray-300">Limpeza detalhada com produtos profissionais</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-900 rounded-2xl overflow-hidden border border-yellow-500 hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-yellow-500">Polimento Premium</h3>
+        <p class="mt-3 text-gray-300">Brilho intenso e remoção de riscos</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-900 rounded-2xl overflow-hidden border border-yellow-500 hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1597007066704-67bf2068d5b2" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-yellow-500">Vitrificação</h3>
+        <p class="mt-3 text-gray-300">Proteção duradoura e acabamento espelhado</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="py-20 px-6 bg-gray-900 text-center">
+  <h2 class="text-4xl font-bold mb-10">Por que escolher a gente?</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div>🔥 Atendimento rápido</div>
+    <div>⭐ Qualidade premium</div>
+    <div>📍 Localização estratégica</div>
+  </div>
+</section>
+
+<!-- AGENDAMENTO -->
+<section id="agendamento" class="py-20 px-6 text-center">
+  <h2 class="text-4xl font-bold mb-8">Agende seu horário</h2>
+
+  <form id="formAgendamento" class="max-w-md mx-auto space-y-4">
+    <input type="text" id="nome" placeholder="Seu nome" required class="w-full p-4 rounded bg-gray-800">
+    <input type="tel" id="telefone" placeholder="WhatsApp" required class="w-full p-4 rounded bg-gray-800">
+    
+    <select id="servico" class="w-full p-4 rounded bg-gray-800">
+      <option>Lavagem Técnica</option>
+      <option>Polimento Premium</option>
+      <option>Vitrificação</option>
+    </select>
+
+    <input type="date" id="data" required class="w-full p-4 rounded bg-gray-800">
+    <input type="time" id="hora" required class="w-full p-4 rounded bg-gray-800">
+
+    <button type="submit"
+      class="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-4 rounded-xl font-bold w-full transition">
+      Confirmar Agendamento
+    </button>
+  </form>
+
+  <p id="mensagem" class="mt-6 text-green-500"></p>
+</section>
+
+<!-- SCRIPT -->
 <script>
-document.getElementById('form').addEventListener('submit', async (e) => {
+const horariosOcupados = [];
+
+const form = document.getElementById('formAgendamento');
+const msg = document.getElementById('mensagem');
+
+form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const dados = {
-    nome: nome.value,
-    telefone: telefone.value,
-    servico: servico.value,
-    data: data.value,
-    hora: hora.value
-  };
+  const nome = document.getElementById('nome').value;
+  const telefone = document.getElementById('telefone').value;
+  const servico = document.getElementById('servico').value;
+  const data = document.getElementById('data').value;
+  const hora = document.getElementById('hora').value;
 
-  const res = await fetch('http://localhost:3000/agendar', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(dados)
-  });
+  const horario = data + ' ' + hora;
 
-  if (res.status === 400) {
-    msg.innerText = 'Horário já ocupado';
+  if (horariosOcupados.includes(horario)) {
+    msg.innerText = "Esse horário já está ocupado!";
     return;
   }
 
-  msg.innerText = 'Agendado com sucesso!';
+  horariosOcupados.push(horario);
+
+  const texto = `Olá, sou ${nome}. Quero agendar ${servico} para ${data} às ${hora}.`;
+  const url = `https://wa.me/5584998780004?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, '_blank');
+
+  msg.innerText = "Agendamento confirmado!";
+
+  form.reset();
 });
 </script>
 
 </body>
+</html>
 </html>
