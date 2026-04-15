@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Painel</title>
+</head>
+<body>
+<h1>Agendamentos</h1>
+<ul id="lista"></ul>
+
+<script>
+fetch('http://localhost:3000/agendamentos')
+.then(r => r.json())
+.then(data => {
+  const lista = document.getElementById('lista');
+  data.forEach(a => {
+    lista.innerHTML += `<li>${a.nome} - ${a.data} ${a.hora}</li>`;
+  });
+});
+</script>
+</body>
+</html>
